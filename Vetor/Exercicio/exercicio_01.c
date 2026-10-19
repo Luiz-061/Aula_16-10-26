@@ -1,22 +1,27 @@
 #include <stdio.h>
 
-int main(){
-    int aluno[5];
+int main()
+{
+   float v[5];
+   int i = 0;
+   
+  while(i < 5){
+      do{
+            printf("Digite a nota do Aluno %d: ", i);
+            scanf("%f", &v[i]);
+            if(v[i] < 0 || v[i] > 10){
+                printf("Erro ao inserir a nota! Digite novamente! \n");
+            }
+       
+           
+       }while(v[i] < 0 || v[i] > 10);
+       i++;
+       
+  }
+   
+   for(int i = 0; i < 5; i++){
+       printf("Aluno matricula v[%d] = %.2f \n", i, v[i]);
+   }
 
-        for(int i = 0; i < 5; i++){
-            do{
-                printf("Insira a nota do aluno %d: ", i);
-                scanf("%d", aluno[i]);
-
-            
-                if(aluno[i] < 0 || aluno[i] > 10){
-                    printf("Numero inserido incorreto! Digite novamente!");    
-                }
-            }while(aluno[i] < 0 || aluno[i] > 10);
-        }
-
-        for(int i = 0; i < 5; i++){
-            printf("Notas do aluno:\n");
-            printf("Aluno[%d]: %d", i, aluno[i]);
-        }
+    return 0;
 }
